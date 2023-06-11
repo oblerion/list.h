@@ -9,30 +9,29 @@ it's my own code, all function are tested before publish.
 
 int main()
 {
-  // constructor
+// constructor
 	lst* list = LST();
 	int a=1;
 	int b=2;
 	int c=5;
-  // add
+// add
 	lstadd(list,&a);
 	lstadd(list,&b);
 	lstadd(list,&c);
-  // delete at id 2, begin at 0
+// delete at id 2, begin at 0
 	lstdel(list,2);
 	
-  // find by adress
+// find by adress
 	printf("\nfind %d pos %d",b,lstfind(list,&b));
 	
-	// get list's lenght 
+// get list's lenght 
 	for(int i=0;i<lstlen(list);i++)
 	{
-    // get element by id
+// get element by id
 		int* ti = lstat(list,i);
 		printf("\ni %d v %d",i,*ti);
-	}
-	
-	// free memory
+	}	
+// free memory
 	lstfree(list);
 	return 0;
 }
