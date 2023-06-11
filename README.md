@@ -1,5 +1,3 @@
-# list.h
-Dynamic list in c
 
 it's my own code, all function are tested before publish.
 
