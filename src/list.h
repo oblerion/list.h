@@ -1,3 +1,6 @@
+#ifndef LIST_H
+#define LIST_H
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -22,4 +25,4 @@ void lstdel(lst* list,int id);		// delete at id
 void* lstat(lst* list,int id);		// get at id
 int lstfind(lst* list,void* var);	// find var
 void lstfree(lst* list);			// free memory space
-
+#endif
