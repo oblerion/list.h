@@ -9,19 +9,13 @@ struct e_lst* ELST()
 	e_list->ptr_d = NULL;
 	return e_list;
 }
-void elstfree(struct e_lst* e_list)
-{
-	if(e_list!=NULL) return;
-	free(e_list->pvar);
-	free(e_list->ptr_u);
-	free(e_list->ptr_d);
-}
 // ------- public list function ------------------------
 lst* LST()
 {
 	lst* list = (lst*)malloc(sizeof(lst));
 	list->size=0;
 	list->ptr = NULL;
+	return list;
 }
 
 int lstlen(lst* list)
@@ -126,7 +120,7 @@ void lstfree(lst* list)
 	while(list->ptr!=NULL)
 	{
 		tmp_elst = list->ptr->ptr_u;
-		elstfree(list->ptr);
+		free(list->ptr);
 		list->ptr = tmp_elst;
 	}
 	free(list);
