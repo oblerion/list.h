@@ -113,6 +113,20 @@ int lstfind(lst* list,void* var)
 	}
 	return -1;
 }
+void lstclear(lst* list)
+{
+	if(list==NULL) return;
+	struct e_lst* tmp_elst;
+	while(list->ptr!=NULL)
+	{
+		tmp_elst = list->ptr->ptr_u;
+		free(list->ptr);
+		list->ptr = tmp_elst;
+	}
+	list->size=0;
+	list->ptr=NULL;
+}
+
 void lstfree(lst* list)
 {
 	if(list==NULL) return;
