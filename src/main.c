@@ -15,13 +15,11 @@ int main()
 	
 	printf("\nfind %d pos %d",b,lstfind(list,&b));
 	
-	
 	for(int i=0;i<lstlen(list);i++)
 	{
 		int* ti = lstat(list,i);
 		printf("\ni %d v %d",i,*ti);
 	}
-	
 	
 	lstfree(list);
 	return 0;
